@@ -9,11 +9,6 @@ Inspired by
 [How I hacked Slack into a community platform with Typeform](https://levels.io/slack-typeform-auto-invite-sign-ups/)
 and Socket.io's Slack page.
 
-This project supports Heroku, Azure, Cloud Foundry, and [ic.dev](https://ic.dev).
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
-
 ## Settings
 
 You can set variables for your own purpose in `config.js` or environment variables.
@@ -63,7 +58,7 @@ You can test your token via curl:
    --compressed
   ```
 
-### Heroku / Azure
+### Cloud
 
 Add the application settings that are defined in the environment variables above.
 
@@ -171,14 +166,3 @@ as reCAPTCHA v2 type.
 
 Set "Site key" as `recaptchaSiteKey` or `RECAPTCHA_SITE`,
 and "Secret key" as `recaptchaSecretKey` or `RECAPTCHA_SECRET`.
-
-## Associate fork with heroku
-If you use the "Deploy to Heroku" button and want to modify your App you should
-fork this project. After forking and making changes you should associate your
-repo with the deployed instance by running:
-
-`$ heroku git:remote -a thawing-inlet-61413` replacing your heroku app's name
-and running
-
-`$ git push heroku master` to upload the changes. For full details see
-[Heroku: deploying with git](https://devcenter.heroku.com/articles/git#for-an-existing-heroku-app)
