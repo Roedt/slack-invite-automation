@@ -35,7 +35,7 @@ router.post('/invite', function(req, res) {
             });
           } else {
             let error = body.error;
-            if (error === 'already_invited' || error === 'already_in_team') {
+            if (error === 'already_invited' || error === 'already_in_team' || error === 'already_in_team_invited_user') {
               res.render('result', {
                 community: config.community,
                 message: 'Success! You were already invited.<br>' +
