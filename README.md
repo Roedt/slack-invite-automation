@@ -138,26 +138,6 @@ There are two ways to issue the access token.
 
     ![](screenshots/basic_info-client_id.png)
 
-## Badge
-
-![](screenshots/badge.png)
-
-You can use the badge to show status of user in your slack.
-
-* With default colors:
-    ```
-    <img src="https://your.domain/badge.svg">
-    ```
-
-* With custom colors:
-
-    * `?colorA=abcdef` Set background of the left part (hex color only)
-    * `?colorB=fedcba` Set background of the right part (hex color only)
-
-    ```
-    <img src="https://your.domain/badge.svg?colorA=155799&colorB=159957">
-    ```
-
 ## reCAPTCHA
 Register a new site in [Google reCAPTHCA](https://www.google.com/recaptcha/)
 as reCAPTCHA v2 type.
