@@ -9,7 +9,7 @@ Inspired by
 [How I hacked Slack into a community platform with Typeform](https://levels.io/slack-typeform-auto-invite-sign-ups/)
 and Socket.io's Slack page.
 
-This project supports Heroku, Azure, Cloud Foundry, Amazon Web Services (AWS), and [ic.dev](https://ic.dev).
+This project supports Heroku, Azure, Cloud Foundry, and [ic.dev](https://ic.dev).
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 [![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
@@ -67,33 +67,6 @@ You can test your token via curl:
 
 Add the application settings that are defined in the environment variables above.
 
-### Amazon Web Services (AWS)
-
-If you have an AWS account and have already installed and configured the AWS CLI tool, you can easily deploy this application to API Gateway and Lambda via CloudFormation in a few minutes.
-
-Instead of editing `config.js`, take these steps:
-
-1. Copy `aws/config.example.sh` to `aws/config.sh`
-2. Edit the values in `aws/config.sh`, which correspond to the variables described above, plus these:
-    * `StackName`: the name of the CloudFormation stack to create
-    * `S3BucketArtifacts`: the name of an existing S3 bucket you have write access to, for storing deployment artifacts
-    * `S3PrefixArtifacts`: the prefix to use within that S3 bucket for all deployment artifacts written
-3. Run `aws/deploy.sh` to create the CloudFormation stack and deploy your application, outputting the URL
-4. (Optional) For a friendlier URL, log into the AWS web console and establish a custom domain pointing to the API Gateway stage deployed in step 3.
-
-### [ic.dev](https://ic.dev)
-
-If you haven't already installed the IC CLI, please refer to the [documentation](https://ic.dev/docs/en/installation).
-
-Deploy the `lsuss.slack_inviter` brick directly from the IC Public Index:
-```shell
-$ ic aws up lsuss.slack_inviter slack_inviter --params community_name='Your Community Name',slack_url=yourcommunity.slack.com,slack_token=xoxp-xxx-xxx-xxx-xxx
-```
-
-Retreive the id and url of the API:
-```shell
-$ ic aws value slack_inviter
-```
 
 ## Run
 [Node.js](http://nodejs.org/) is required.
