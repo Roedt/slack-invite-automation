@@ -1,16 +1,6 @@
-FROM node:19-alpine
-ARG _COMMUNITY_NAME
-ARG _SLACK_URL
-ARG SLACK_TOKEN
-ENV COMMUNITY_NAME=${_COMMUNITY_NAME}
-ENV SLACK_URL=${_SLACK_URL}
-ENV SLACK_TOKEN=${SLACK_TOKEN}
-
-EXPOSE 3000
-
-COPY . /slack-invite-automation
-WORKDIR /slack-invite-automation
-
-RUN npm install
-
-CMD node ./bin/www
+FROM busybox:1.35
+RUN adduser -D static
+USER static
+WORKDIR /home/static
+COPY index.html .
+CMD ["busybox", "httpd", "-f", "-v", "-p", "3000"]
