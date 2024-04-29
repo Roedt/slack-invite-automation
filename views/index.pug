@@ -12,16 +12,9 @@ html
         .header
           h1
             strong #{community}
-          h2 #{__('HEADER', community)}
         .content
           .information
-            form(method="POST", action="invite")#join-form.form
-              input(type="email", name="email", autofocus, placeholder=__('ENTER_EMAIL'))#slack-email.field
-              if tokenRequired
-                input(type="text", name="token", placeholder=__('ENTER_TOKEN'))#slack-token.field
-              input(type="submit", value="Join").submit
-              if !!recaptchaSiteKey
-                div(class="g-recaptcha", data-sitekey=recaptchaSiteKey)
+            a(href="https://join.slack.com/t/roedtorg/shared_invite/zt-2hubfa4qa-HP8PDgO6JDfPBZbbm5VuHQ") Meld deg inn i Rødts medlems-slack
     if !!recaptchaSiteKey
        script(src='https://www.google.com/recaptcha/api.js')
     script.
